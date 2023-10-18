@@ -27,6 +27,10 @@ header {
 	background-color: rgb(49, 49, 49);
 }
 
+#square {
+	display: none;
+}
+
 main {
 	height: 650px;
 	width: 100%;
@@ -108,4 +112,60 @@ main {
 	height: 20%;
 	width: 90%;
 	background-color: grey;
+}
+
+@media screen and (max-width: 1280px) {
+	#bar {
+		display: none;
+	}
+
+	header {
+		justify-content: flex-start;
+	}
+
+	#logo {
+		margin-right: 60%;
+	}
+	#square {
+		display: flex;
+		height: 30px;
+		width: 30px;
+		background-color: grey;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.block {
+		display: none;
+	}
+
+	#logo {
+		margin-right: 80%;
+	}
+
+	main{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	#first-bar,
+	#second-bar {
+		width: 100%;
+	}
+
+	#main-container {
+		height: 100%;
+		width: 100%;
+	}
+	#right {
+		display: none;
+	}
+
+	#left {
+		width: 100%;
+	}
+
+	#top-part,
+	#bottom-part {
+		flex-direction: column;
+	}
 }
