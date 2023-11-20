@@ -131,7 +131,6 @@ const { resolve } = require("path");
 // let arr2 = [2, 4, 6];
 // console.log(mergedArray(arr1, arr2));
 
-
 // Given two objects, obj1 and obj2, create a new object mergedObject using the spread operator that combines the properties of both objects. If there are overlapping properties, the values from obj2 should overwrite the values from obj1.
 
 // let obj1 = {
@@ -181,18 +180,60 @@ const { resolve } = require("path");
 
 // -La chiamata avrà successo con il messaggio Data retrieved successfully se il valore random è inferiore a 0.5 altrimenti fallisce con il messaggio Error: Failed to fetch data
 
-function getData(){
-    return new Promise((resolve, reject) =>{
-        let success = Math.random();
-        if(success < 0.5){
-            resolve(console.log("Data retrieved"))
-        }
-        else{
-            reject(console.log("Error: Failed to fetch data"))
-        }
-    })
-}
+// function getData() {
+//   return new Promise((resolve, reject) => {
+//     let success = Math.random();
+//     if (success < 0.5) {
+//       resolve(console.log("Data retrieved"));
+//     } else {
+//       reject(console.log("Error: Failed to fetch data"));
+//     }
+//   });
+// }
 
-getData()
-.then((data)=> console.log(data))
-.catch((err)=> console.log(err))
+// getData()
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+
+// async function fetchDAta() {
+//   const response = await fetch("https://api.thecatapi.com/v1/images/search");
+//   const data = await response.json();
+//   return data;
+// }
+
+// fetchDAta()
+// .then((element) => element.forEach((el) => console.log(el.url)));
+
+// async function fetchDAta() {
+//   const response = await fetch("https://restcountries.com/v3.1/all");
+//   const data = await response.json();
+//   return data;
+// }
+
+// fetchDAta().then((element) =>
+//   element.forEach((el) => {
+//     if (el.name.common == "Cuba") {
+//       console.log(el.name.common);
+//     }
+//   })
+// );
+
+// async function fetchData() {
+//   let response = await fetch(
+//     "http://www.themealdb.com/api/json/v1/1/random.php"
+//   );
+//   let data = await response.json();
+//   return data;
+// }
+
+// fetchData().then((data) =>
+//   data.meals.forEach((el) => {
+//     let first = el.strIngredient1;
+//     let second = el.strIngredient2;
+//     let third = el.strIngredient3;
+//     let fourth = el.strIngredient4;
+
+//     let array = [first, second, third, fourth];
+//     console.log(array.join(", "));
+//   })
+// );
