@@ -1,5 +1,8 @@
 // Create an object with information about your favorite movie (title, director, year, genre, etc.). Use a `for...in` loop to log each property and its value.
 
+const { log } = require("neo-async");
+const { resolve } = require("path");
+
 // const favoriteMovie = {
 // 	title: "Film",
 // 	director: "John Doe",
@@ -128,7 +131,6 @@
 // let arr2 = [2, 4, 6];
 // console.log(mergedArray(arr1, arr2));
 
-
 // Given two objects, obj1 and obj2, create a new object mergedObject using the spread operator that combines the properties of both objects. If there are overlapping properties, the values from obj2 should overwrite the values from obj1.
 
 // let obj1 = {
@@ -144,3 +146,94 @@
 // let mergedObject = { ...obj1, ...obj2 };
 
 // console.log(mergedObject);
+
+// -Crea una catena di Promises per simulare un'operazione asincrona in più fasi.
+// -La prima Promise recupera i dati dell'utente { id: 1, name: 'John' }.
+// -La seconda Promise recupera i post dell'utente ['Post 1', 'Post 2', 'Post 3'].
+// -Infine, chiama le funzioni per recuperare e stampare in console il nome dell'utente e i titoli dei post.
+
+// function getUserData(){
+//     return new Promise((resolve)=> {
+//         setTimeout(()=> {
+//             resolve({ id: 1, name: 'John' })
+//         }, 1000)
+//     })
+// }
+
+// function getPostData(userId, userName){
+//     return new Promise((resolve)=>{
+//         setTimeout(()=>{
+//             const posts= ['Post 1', 'Post 2', 'Post 3'];
+//             resolve({userId, userName, posts});
+//             }, 2000)
+//         })
+// }
+
+// getUserData()
+// .then((data)=> getPostData(data.id, data.name))
+// .then((post)=> console.log(post))
+// .catch((error)=>console.log('Error: ', error));
+
+// -Crea una Promise che simula il recupero dei dati da un'API. A volte la richiesta avrà successo, a volte fallirà con un messaggio di errore.
+
+// -Crea una variabile chiamata success con un valore numerico random da 0 a 0.5
+
+// -La chiamata avrà successo con il messaggio Data retrieved successfully se il valore random è inferiore a 0.5 altrimenti fallisce con il messaggio Error: Failed to fetch data
+
+// function getData() {
+//   return new Promise((resolve, reject) => {
+//     let success = Math.random();
+//     if (success < 0.5) {
+//       resolve(console.log("Data retrieved"));
+//     } else {
+//       reject(console.log("Error: Failed to fetch data"));
+//     }
+//   });
+// }
+
+// getData()
+//   .then((data) => console.log(data))
+//   .catch((err) => console.log(err));
+
+// async function fetchDAta() {
+//   const response = await fetch("https://api.thecatapi.com/v1/images/search");
+//   const data = await response.json();
+//   return data;
+// }
+
+// fetchDAta()
+// .then((element) => element.forEach((el) => console.log(el.url)));
+
+// async function fetchDAta() {
+//   const response = await fetch("https://restcountries.com/v3.1/all");
+//   const data = await response.json();
+//   return data;
+// }
+
+// fetchDAta().then((element) =>
+//   element.forEach((el) => {
+//     if (el.name.common == "Cuba") {
+//       console.log(el.name.common);
+//     }
+//   })
+// );
+
+// async function fetchData() {
+//   let response = await fetch(
+//     "http://www.themealdb.com/api/json/v1/1/random.php"
+//   );
+//   let data = await response.json();
+//   return data;
+// }
+
+// fetchData().then((data) =>
+//   data.meals.forEach((el) => {
+//     let first = el.strIngredient1;
+//     let second = el.strIngredient2;
+//     let third = el.strIngredient3;
+//     let fourth = el.strIngredient4;
+
+//     let array = [first, second, third, fourth];
+//     console.log(array.join(", "));
+//   })
+// );
