@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <select></select> -->
+  </body>
+
+  <!-- <script>
+    async function getData() {
+      const body = document.querySelector("body");
+      const select = document.querySelector("select");
+      const response = await fetch("https://cataas.com/api/tags");
+      const data = await response.json();
+      let tags = data.slice(1, 19);
+      tags.forEach((el) => {
+        let option = document.createElement("option");
+        option.value = el;
+        option.text = el;
+        select.add(option);
+      });
+    }
+    getData();
+  </script> -->
+
+  <!-- <script>
+    async function getData() {
+      const body = document.querySelector("body");
+      const response = await fetch("https://restcountries.com/v3.1/all");
+      const responseJSON = await response.json();
+      let p = "";
+      responseJSON.forEach((element) => {
+        p += `<p>${element.name.common}</p>`;
+      });
+      body.innerHTML = p;
+    }
+    getData();
+  </script> -->
+
+  <!-- <script>
+    async function getData() {
+      let body = document.querySelector("body");
+      let response = await fetch("https://api.thecatapi.com/v1/images/search");
+      let responseJson = await response.json();
+      let img = "";
+      responseJson.forEach((el) => {
+        img = `<img src="${el.url}" alt="">`;
+      });
+      body.innerHTML = img;
+    }
+    getData();
+  </script> -->
+
+  <!-- <script>
+    async function getData() {
+      const body = document.querySelector("body");
+      const response = await fetch(
+        "https://www.themealdb.com/api/json/v1/1/random.php"
+      );
+      let responseJSON = await response.json();
+      let a = "";
+      responseJSON.meals.forEach((el) => {
+        a = `<a href="${el.strYoutube}">${el.strMeal}</a>`;
+      });
+      body.innerHTML = a;
+    }
+    getData();
+  </script> -->
+
+  <!-- <script>
+    async function getData() {
+      const body = document.querySelector("body");
+      const response = await fetch(
+        "https://www.themealdb.com/api/json/v1/1/random.php"
+      );
+
+      let p = "";
+      if (response.status == 200) {
+        let data = await response.json();
+        data.meals.forEach((element) => (p = `<p>${element.strMeal}</p>`));
+      } else {
+        console.log((p = `<p>page not found</p>`));
+        // p = `<p>${response.statusText}</p>`;
+      }
+      body.innerHTML = p;
+
+      //   data.meals.forEach((element) => console.log(element.strMeal));
+    }
+
+    getData();
+  </script> -->
+
+  <!-- <script>
+      async function getData() {
+        const body = document.querySelector("body");
+        const response = await fetch("https://v2.jokeapi.dev/joke/Programming");
+        const data = await response.json();
+        let p = "";
+        p = `<p>${data.setup} ${data.delivery}</p>`;
+        body.innerHTML = p;
+      }
+
+      getData();
+    </script> -->
+
+  <!-- <script>
+    async function getData() {
+      const body = document.querySelector("body");
+      const response = await fetch("https://v2.jokeapi.dev/joke/Any?amount=10");
+      const data = await response.json();
+      let p = "";
+      const joke = data.jokes.filter((el) => el.category == "Programming");
+      joke.forEach((el) => {
+        p = `<p>${el.joke}</p>`;
+      });
+      body.innerHTML = p;
+    }
+
+    getData();
+  </script> -->
+</html>
